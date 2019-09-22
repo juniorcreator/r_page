@@ -1,0 +1,102 @@
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Myriad-pro";
+  transition: background .3s, color .3s;
+  position: relative;
+  cursor: pointer;
+  padding: 16px 30px 14px 17px;
+  text-align: center;
+  min-width: 226px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  &--white {
+    background-color: #fff;
+    color: #000000;
+    border: 1px solid #ffffff;
+    &:hover {
+      background-color: transparent;
+      color: #fff;
+      border-color: #3B586B;
+    }
+  }
+  &--transparent {
+    border: 1px solid #3B586B;
+    background-color: transparent;
+    color: #fff;
+    &:hover {
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        border-color: #fff;
+        ~ a {
+          background-color: transparent;
+          color: #fff;
+        }
+      }
+    }
+    @include xs_540 {
+      margin-bottom: 10px;
+    }
+  }
+  &--detail {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: uppercase;
+    background: #53d0fb;
+    padding: 17px 20px 15px 20px;
+    min-width: 277px;
+    overflow: hidden;
+    transition: color 0.3s, box-shadow 0.4s;
+    position: relative;
+    z-index: 1;
+    &:before {
+      background: #E4E4E4;
+    }
+    &:after {
+      background: #FFFFFF;
+    }
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      bottom: 100%;
+      left: 0;
+      z-index: -1;
+      transition: transform 0.3s;
+      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+    &:hover {
+      background-color: #fff;
+      box-shadow: 0 0 8px 2px rgba(0,0,0,.1);
+      color: #000;
+      &:before, &:after {
+        transform: translate3d(0, 100%, 0);
+      }
+      &:after {
+        transition-delay: 0.175s;
+      }
+    }
+    //&:hover:before,&:hover:after {
+    //  transform: translate3d(0, 100%, 0);
+    //}
+
+    @include sm_769 {
+
+    }
+    @include xs_540 {
+      min-width: initial;
+    }
+  }
+  @include xs_540 {
+    padding: 10px 15px 10px 15px;
+    font-size: 16px;
+  }
+}

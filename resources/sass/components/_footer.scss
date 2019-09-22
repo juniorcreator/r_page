@@ -1,0 +1,82 @@
+.footer {
+  padding: 43px 15px 8px 15px;
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 42px;
+  }
+  &__img {
+    max-width: 168px;
+    width: 100%;
+    position: relative;
+    padding-bottom: 81px;
+    margin-right: 58px;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__list{
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 21px;
+      transition: all .3s;
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        max-width: 31px;
+        object-fit: contain;
+      }
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &__copyrights {
+    color: #000000;
+    font-family: 'Geometria';
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      padding: 3px 0;
+      margin-left: 3px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(53,53,53,.5);
+        transition: transform 0.2s, background-color 0s;
+        transform: translateY(95%);
+      }
+      &:hover {
+        &:before {
+          background-color: rgba(53,53,53,.5);
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  @include sm_690 {
+    &__copyrights {
+      flex-direction: column;
+    }
+  }
+}

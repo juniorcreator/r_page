@@ -1,0 +1,29 @@
+.phones {
+  margin-right: 44px;
+  display: flex;
+  align-items: center;
+  &__item{
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      color: #53d0fb;
+      font-family: "Myriad-pro";
+      font-size: 15px;
+      font-weight: 400;
+      text-transform: uppercase;
+      transition: color .3s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  @include lg_1640{
+    margin-right: 10px;
+  }
+  @include md_960 {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

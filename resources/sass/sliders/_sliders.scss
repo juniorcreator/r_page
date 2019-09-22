@@ -1,0 +1,198 @@
+.top-slider {
+  height: 100vh;
+  position: relative;
+  &__btns {
+    margin-top: 58px;
+    width: 100%;
+  }
+  .slides-nav {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    padding: 0 21px;
+    top: calc(50% - 30px);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    &__nav {
+      transition: transform .3s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: 24px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    span {
+      width: 49px;
+      background-color: transparent;
+      margin: 0 2.5px;
+      transition: all .3s;
+      border-radius: 0;
+      padding: 10px 0;
+      opacity: .5;
+      position: relative;
+      cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: calc(50% - 1px);
+        background-color: #bab8b2;
+        height: 2px;
+        width: 100%;
+      }
+      &.active {
+        opacity: 1;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__wrap {
+    height: 100%;
+  }
+  &__content, &__item {
+    height: 100%;
+  }
+  &__content {
+
+  }
+  &__item {
+    text-align: center;
+  }
+  &__logo {
+    position: relative;
+    margin-bottom: 71px;
+    img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    //transition: al .4s ease-in-out;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity .4s ease-in-out;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,.3) , rgba(0,0,0,.6) 80%);
+    }
+  }
+  &__text-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 5%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  &__title, &__subtitle {
+    font-family: 'Myriad-pro';
+    color: #ffffff;
+    font-size: 48px;
+    text-transform: uppercase;
+    position: relative;
+    line-height: 1;
+  }
+  &__title {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    font-weight: 400;
+  }
+  @include lg_1441 {
+    &__text-wrap {
+      padding-bottom: 10%;
+    }
+  }
+  @include md_960 {
+    &__logo {
+      max-width: 75%;
+    }
+    &__text-wrap {
+
+    }
+    &__title {
+    }
+    &__title, &__subtitle {
+      font-size: 37px;
+    }
+  }
+  @include sm_769 {
+    height: auto;
+    &__logo {
+      top: 0;
+      position: relative;
+      margin-bottom: 20px;
+      max-width: initial;
+      img {
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+    &__btns {
+      margin-top: 20px;
+    }
+    &__text-wrap {
+      justify-content: center;
+      padding: 220px 25px 60px 25px;
+    }
+    &__title {
+      margin-top: 0;
+    }
+    &__title, &__subtitle {
+      font-size: 30px;
+      width: 100%;
+    }
+  }
+  @include xs_540 {
+    &__title, &__subtitle {
+      font-size: 19px;
+    }
+    .slides-nav {
+      padding: 0 15px;
+      &__nav {
+        max-width: 10px;
+      }
+    }
+    &__text-wrap {
+    }
+    &__logo {
+      img {
+        max-width: 240px;
+      }
+    }
+  }
+}

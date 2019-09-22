@@ -1,0 +1,42 @@
+.lang {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: -1;
+  &__item {
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+      a:after {
+        display: none;
+      }
+    }
+    a {
+      color: #53d0fb;
+      font-family: "Myriad-pro";
+      font-size: 15px;
+      font-weight: 400;
+      text-transform: uppercase;
+      position: relative;
+      padding-right: 14px;
+      transition: all .3s;
+      &:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+      &:after {
+        content: '|';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 2px;
+      }
+    }
+    &.active {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
